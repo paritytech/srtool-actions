@@ -23,7 +23,7 @@ jobs:
           # a bug in `act`: https://github.com/nektos/act/issues/655
           chain: ${{ matrix.chain }}
           package: "runtime-${{ matrix.chain }}"
-          image: chevdor/srtool
+          image: paritytech/srtool
           tag: "nightly-2021-03-15"
           path: "/projects/polkadot"
 
