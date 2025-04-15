@@ -1,12 +1,12 @@
 # SRTOOL Github Action
 
 <figure>
-<img src="https://github.com/chevdor/srtool-actions/actions/workflows/polkadot-sdk.yml/badge.svg?branch=master" alt="badge" />
+<img src="https://github.com/paritytech/srtool-actions/actions/workflows/polkadot-sdk.yml/badge.svg?branch=master" alt="badge" />
 </figure>
 
 ## Introduction
 
-[srtool](https://github.com/chevdor/srtool) is a docker image that allows building Substrate WASM Runtimes in a deterministic manner. It ensures that all `srtool` users (and tooling), using the same/latest tag, will produce 100% exactly the same runtime. It enables further trustless verifications.
+[srtool](https://github.com/paritytech/srtool) is a docker image that allows building Substrate WASM Runtimes in a deterministic manner. It ensures that all `srtool` users (and tooling), using the same/latest tag, will produce 100% exactly the same runtime. It enables further trustless verifications.
 
 <figure>
 <img src="resources/logo/srtool-gh-action_256px.png" alt="srtool gh action 256px" />
@@ -20,13 +20,13 @@ Gitlab users are not left behind and can use the 2 first options mentioned below
 
 There are now several ways to use `srtool` in your project:
 
--   using `srtool` [via alias](https://github.com/chevdor/srtool#user-content-using-an-alias): powerful but very verbose and prone to errors. This is for developers. This option is being deprecated and not recommended.
+-   using `srtool` [via alias](https://github.com/paritytech/srtool#user-content-using-an-alias): powerful but very verbose and prone to errors. This is for developers. This option is being deprecated and not recommended.
 
 -   using the [srtool-cli](https://github.com/chevdor/srtool-cli): much easier to use and removes a whole bunch of potential user’s mistakes. This is for developers.
 
 -   using the [srtool-app](https://github.com/chevdor/srtool-app): the easiest option of all thanks to its GUI. This is good for non-developers.
 
--   using the Github actions from [this repo](https://github.com/chevdor/srtool-actions). This is for your automatic CI.
+-   using the Github actions from [this repo](https://github.com/paritytech/srtool-actions). This is for your automatic CI.
 
 ## Requirements
 
@@ -64,7 +64,7 @@ Make sure you store the yml files shown below in your repository under `.github/
           - uses: actions/checkout@v3
           - name: Srtool build
             id: srtool_build
-            uses: chevdor/srtool-actions@v0.8.0
+            uses: paritytech/srtool-actions@v0.9.3
             with:
               chain: ${{ matrix.chain }}
               runtime_dir: polkadot-parachains/${{ matrix.chain }}-runtime
@@ -90,7 +90,7 @@ Make sure you store the yml files shown below in your repository under `.github/
           - uses: actions/checkout@v3
           - name: Srtool build
             id: srtool_build
-            uses: chevdor/srtool-actions@v0.8.0
+            uses: paritytech/srtool-actions@v0.9.3
             with:
               chain: ${{ matrix.chain }}
           - name: Summary
@@ -117,7 +117,7 @@ Make sure you store the yml files shown below in your repository under `.github/
           - uses: actions/checkout@v3
           - name: Srtool build
             id: srtool_build
-            uses: chevdor/srtool-actions@v0.8.0
+            uses: paritytech/srtool-actions@v0.8.0
             with:
               chain: ${{ matrix.chain }}
               runtime_dir: polkadot-parachains/${{ matrix.chain }}-runtime
@@ -150,7 +150,7 @@ Make sure you store the yml files shown below in your repository under `.github/
           - uses: actions/checkout@v3
           - name: Srtool build
             id: srtool_build
-            uses: chevdor/srtool-actions@v0.8.0
+            uses: paritytech/srtool-actions@v0.8.0
             env:
               # optional: will be passed to docker srtool run cmd
               BUILD_OPTS: "--features on-chain-release-build"
@@ -179,7 +179,7 @@ Make sure you store the yml files shown below in your repository under `.github/
           - uses: actions/checkout@v3
           - name: Srtool build
             id: srtool_build
-            uses: chevdor/srtool-actions@v0.8.0
+            uses: paritytech/srtool-actions@v0.9.3
             env:
               # optional: will override the parachain pallet ID and authorize_upgrade call ID,
               #           which will result in a different parachain_authorize_upgrade_hash

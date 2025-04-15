@@ -1,6 +1,6 @@
 name: "Srtool"
 description: "Build WASM Runtime with SRTOOL"
-author: chevdor
+author: chevdor & paritytech
 branding:
   icon: "package"
   color: "blue"
