@@ -92,11 +92,11 @@ runs:
 
         RUSTC_VERSION_URL=https://raw.githubusercontent.com/${{ inputs.image }}/master/RUSTC_VERSION
         echo Fetching RUSTC_VERSION from $RUSTC_VERSION_URL
-        RUSTC_VERSION=`curl -s $RUSTC_VERSION_URL`
+        RUSTC_VERSION=`curl --max-time 10 --retry 5 --retry-delay 10 --retry-max-time 120 -s $RUSTC_VERSION_URL`
 
         SRTOOL_VERSION_URL=https://raw.githubusercontent.com/${{ inputs.image }}/master/VERSION
         echo Fetching SRTOOL_VERSION from $SRTOOL_VERSION_URL
-        SRTOOL_VERSION=`curl -s $SRTOOL_VERSION_URL`
+        SRTOOL_VERSION=`curl --max-time 10 --retry 5 --retry-delay 10 --retry-max-time 120 -s $SRTOOL_VERSION_URL`
 
         echo "RUSTC_VERSION=$RUSTC_VERSION" >> $GITHUB_ENV
         echo "SRTOOL_VERSION=$SRTOOL_VERSION" >> $GITHUB_ENV
